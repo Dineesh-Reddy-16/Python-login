@@ -1,0 +1,47 @@
+{% extends 'auth/auth_layout.html' %}
+{% block title %} {{ title }} {% endblock %}
+{% block content%}
+
+<div class="register">
+	{% include "includes/alert.html" %}
+    <h1>Register</h1>
+    <div class="links">
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}" class="active">Register</a>
+    </div>
+    <form action="{{ url_for('register') }}" method="post" autocomplete="off">
+        <label for="username">
+            <i class="fas fa-user"></i>
+        </label>
+        <input type="text" name="username" placeholder="Username" id="username" required>
+
+        <label for="fullname">
+            <i class="fas fa-user"></i>
+        </label>
+        <input type="text" name="fullname" placeholder="Fullname" id="fullname" required>
+
+        <label for="password">
+            <i class="fas fa-lock"></i>
+        </label>
+        <input type="password" name="password" placeholder="Password" id="password" required>
+
+        <label for="email">
+            <i class="fas fa-envelope"></i>
+        </label>
+        <input type="email" name="email" placeholder="Email" id="email" required>
+
+        <label for="designation">
+            <i class="fa-user-circle"></i>
+        </label>
+        <input type="text" name="designation" placeholder="Designation" id="designation" required>
+
+        <label for="about_yourself">
+            <i class=""></i>
+        </label>
+        <input type="text" name="about_yourself" placeholder="About_yourself" id="about_yourself" required>
+
+        <div class="msg">{{ msg }}</div>
+        <input type="submit" value="Register">
+    </form>
+</div>
+{% endblock %}

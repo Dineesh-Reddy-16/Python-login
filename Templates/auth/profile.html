@@ -1,0 +1,105 @@
+{% extends 'home/layout.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+          margin: 0;
+        }
+        
+        html {
+          box-sizing: border-box;
+        }
+        
+        *, *:before, *:after {
+          box-sizing: inherit;
+        }
+        
+        .column {
+          float: left;
+          width: 33.3%;
+          margin-bottom: 16px;
+          padding: 0 8px;
+        }
+        
+        .card {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          margin: 8px;
+        }
+        
+        .about-section {
+          padding: 50px;
+          text-align: center;
+          background-color: #474e5d;
+          color: white;
+        }
+        
+        .container {
+          padding: 0 16px;
+        }
+        
+        .container::after, .row::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+        
+        .title {
+          color: grey;
+        }
+        
+        .button {
+          border: none;
+          outline: 0;
+          display: inline-block;
+          padding: 8px;
+          color: white;
+          background-color: #000;
+          text-align: center;
+          cursor: pointer;
+          width: 100%;
+        }
+        
+        .button:hover {
+          background-color: #555;
+        }
+        
+        @media screen and (max-width: 650px) {
+          .column {
+            width: 100%;
+            display: block;
+          }
+        }
+        </style>
+</head>
+
+<body class="loggedin">
+    
+      <h2 style="text-align:center"> <h1>Hello {{ all_data['username'] }}, This is our Team </h1></h2>
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <!-- <img src="https://www.w3schools.com/w3images/team2.jpg" alt="Jane" style="width:100%"> -->
+              <div class="container">
+                  <h2>{{ all_data['fullname'] }}</h2>
+                  <p class="title">{{ all_data['designation'] }}</p>
+                  <p><b>User Name</b>       : {{ all_data['username'] }} </p>
+                  <p><b>Employee Id</b>     : {{ all_data['id'] }}</p>
+                  <p><b>Mail</b>            : {{ all_data['email'] }}</p>
+                  <p><b>Password</b>        : {{ all_data['password'] }}</p>
+                  <p><b>About Me</b>        : {{ all_data['about_yourself'] }}</p>
+                  <p><button class="button">Contact</button></p>
+              </div>
+          </div>
+        </div>
+</body>
+
+
+</html>
+
+{% endblock %}
