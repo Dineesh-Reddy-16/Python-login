@@ -45,7 +45,7 @@ FLUSH PRIVILEGES;
 -----------------------------------------------
 # pre-required softwares
 ```
-yum install wget,make,git -y
+yum install wget make git -y
 
 sudo dnf install wget yum-utils make gcc openssl-devel bzip2-devel libffi-devel zlib-devel
 
