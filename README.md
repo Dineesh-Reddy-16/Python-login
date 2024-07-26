@@ -75,7 +75,7 @@ yum -y install mysql-devel openssl-devel
 # Get the code from GitHub
 ```
 cd /opt
-git clone https://github.com/lazy-anand/python-login-page.git
+git clone <repo url>
 cd python-login-page
 ```
 
